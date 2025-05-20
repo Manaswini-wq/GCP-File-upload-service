@@ -1,0 +1,11 @@
+const clamav = require('clamav.js');  
+
+async function virusScan(fileBuffer) {  
+  const client = clamav.createClient(3310, process.env.CLAMAV_HOST);  
+  return new Promise((resolve, reject) => {  
+    client.scan(fileBuffer, (err, result) => {  
+      if (err) reject(err);  
+      resolve(result === 'OK');  
+    });  
+  });  
+}  

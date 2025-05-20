@@ -1,0 +1,3 @@
+User → Node.js API → ClamAV Scan → GCP Cloud Storage  
+                          ↓  
+                  PostgreSQL (Metadata)  

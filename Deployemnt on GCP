@@ -1,0 +1,11 @@
+Enable required API's:
+gcloud services enable storage-component.googleapis.com
+
+Deploy with docker:
+docker build -t file-upload-service .  
+gcloud compute instances create-with-container upload-service \  
+  --container-image file-upload-service  
+
+Autoscale based on traffic:
+gcloud compute instance-groups managed set-autoscaling upload-service \  
+  --max-num-replicas=5 --cpu-utilization=0.6  

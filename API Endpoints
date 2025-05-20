@@ -1,0 +1,14 @@
+Upload a file:
+curl -X POST -H "Authorization: Bearer <JWT>" \  
+-F "file=@/path/to/file" \  
+http://localhost:3000/api/upload
+
+Response:
+{  
+  "fileId": "abc123",  
+  "url": "https://storage.googleapis.com/your-bucket/abc123.pdf"  
+}  
+
+Retrive File Metadata:
+curl -H "Authorization: Bearer <JWT>" \  
+http://localhost:3000/api/files/abc123  

@@ -1,0 +1,2 @@
+// Added index for faster user-based file retrieval  
+await db.query('CREATE INDEX idx_user_id ON files(user_id)');  
